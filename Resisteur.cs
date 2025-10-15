@@ -10,7 +10,6 @@ namespace prelab_3
     internal class Resisteur
     {
         public double Ohm {  get; set; }
-        public double tension { get; set; }
         public Resisteur Resisteur1 { get; set; }
         public Resisteur Resisteur2 { get; set; }
         public string Type { get; set; }
@@ -41,11 +40,14 @@ namespace prelab_3
             }
         }
 
-        public double Ohm1(Tension)
+        public double Ohm1(Tension T)
         {
-            double valeur1 = Tension.tension;
+            return T.Volt / Ohm;
+        }
 
-            return Tension / Ohm;
+        public double Ohm2(Courant T)
+        {
+            return T.Amperemetre * Ohm;
         }
 
     }

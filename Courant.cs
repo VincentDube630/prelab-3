@@ -8,5 +8,7 @@ namespace prelab_3
 {
     internal class Courant
     {
+        public double Amperemetre {  get; set; }
+        public Courant(double amperemetre) { Amperemetre = amperemetre; }
     }
 }
