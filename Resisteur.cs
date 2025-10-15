@@ -13,6 +13,8 @@ namespace prelab_3
         public Resisteur Resisteur1 { get; set; }
         public Resisteur Resisteur2 { get; set; }
         public string Type { get; set; }
+        public Tension TensionAssocie { get; set; }
+        public Courant CourantAssocie { get; set; }
 
         public Resisteur(double omh)
         {
@@ -50,5 +52,11 @@ namespace prelab_3
             return T.Amperemetre * Ohm;
         }
 
+        public void Show()
+        {
+            Console.WriteLine("Resistamce : "+Ohm);
+            Console.WriteLine("Tension : "+TensionAssocie.Volt);
+            Console.WriteLine("Courant : "+CourantAssocie.Amperemetre);
+        }
     }
 }
