@@ -14,6 +14,8 @@ namespace prelab_3
         public Resisteur Resisteur2 { get; set; }
         public string Type { get; set; }
         public Tension TensionAssocie { get; set; }
+        public double Tension { get; set; }
+        public double Courant { get; set; }
         public Courant CourantAssocie { get; set; }
 
         public Resisteur(double omh)
@@ -44,19 +46,21 @@ namespace prelab_3
 
         public double Ohm1(Tension T)
         {
+            Tension = T.Volt / Ohm;
             return T.Volt / Ohm;
         }
 
         public double Ohm2(Courant T)
         {
+            Courant =  T.Amperemetre * Ohm;
             return T.Amperemetre * Ohm;
         }
 
         public void Show()
         {
             Console.WriteLine("Resistamce : "+Ohm);
-            Console.WriteLine("Tension : "+TensionAssocie.Volt);
-            Console.WriteLine("Courant : "+CourantAssocie.Amperemetre);
+            Console.WriteLine("Tension : "+Tension);
+            Console.WriteLine("Courant : "+Courant);
         }
     }
 }
